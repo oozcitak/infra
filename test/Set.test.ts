@@ -62,7 +62,7 @@ describe('Set', () => {
     expect(infraSet.contains(set, 'd')).toBe(false)
   })
 
-  test('remove() with condition', () => {
+  test('contains() with condition', () => {
     const set = new Set(['a', 'b1', 'b2', 'c'])
     expect(infraSet.contains(set, (item) => item.startsWith('b'))).toBe(true)
     expect(infraSet.contains(set, (item) => item.startsWith('d'))).toBe(false)

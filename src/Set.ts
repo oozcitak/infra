@@ -177,7 +177,7 @@ export function *forEach<T>(set: Set<T>, condition?: ((item: T) => boolean)): It
 }
 
 /**
- * Creates and returns a shallow clone of list.
+ * Creates and returns a shallow clone of set.
  * 
  * @param set - a set
  */
@@ -186,7 +186,7 @@ export function clone<T>(set: Set<T>): Set<T> {
 }
 
 /**
- * Returns a set list containing items from the set sorted in ascending 
+ * Returns a new set containing items from the set sorted in ascending 
  * order.
  * 
  * @param set - a set
@@ -202,7 +202,7 @@ export function sortInAscendingOrder<T>(set: Set<T>,
 }
 
 /**
- * Returns a new list containing items from the set sorted in descending 
+ * Returns a new set containing items from the set sorted in descending 
  * order.
  * 
  * @param set - a set
