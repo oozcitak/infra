@@ -44,6 +44,6 @@
     "compile": "tsc",
     "test": "tsc && jest",
     "testChanged": "tsc && jest --onlyChanged",
-    "cover": "tsc && jest --coverage"
+    "coverage": "tsc && jest --coverage && cat ./coverage/lcov.info | node node_modules/coveralls/bin/coveralls.js"
   }
 }
