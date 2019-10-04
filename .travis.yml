@@ -10,5 +10,7 @@ node_js:
   - "10"
   - "node"
 
-script: npm test
-after_success: npm run coverage
+script: 
+  - npm test
+after_success: 
+  - "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
