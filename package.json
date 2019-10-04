@@ -1,0 +1,48 @@
+{
+  "name": "livedom",
+  "version": "0.0.1",
+  "keywords": [
+    "infra",
+    "whatwg"
+  ],
+  "homepage": "http://github.com/oozcitak/infra",
+  "description": "An implementation of the Infra Living Standard",
+  "author": "Ozgur Ozcitak <oozcitak@gmail.com>",
+  "contributors": [],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oozcitak/infra.git"
+  },
+  "bugs": {
+    "url": "http://github.com/oozcitak/infra/issues"
+  },
+  "main": "./lib/index",
+  "engines": {
+    "node": ">=6.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "*",
+    "jest": "*",
+    "ts-jest": "*",
+    "@types/node": "*",
+    "@types/jest": "*"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "/test/.*\\.test\\.tsx?$",
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}"
+    ]
+  },
+  "scripts": {
+    "compile": "tsc",
+    "test": "tsc && jest",
+    "testChanged": "tsc && jest --onlyChanged",
+    "cover": "tsc && jest --coverage"
+  }
+}
