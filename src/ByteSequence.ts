@@ -118,7 +118,10 @@ export function byteLessThan(listA: number[] | Uint8Array,
     if (i >= listB.length) return true
     const a = listA[i]
     const b = listB[i]
-    if (a < b) return true
+    if (a < b)
+      return true
+    else if (a > b)
+      return false
     i++
   }
 }

@@ -1,7 +1,12 @@
 /**
  * A surrogate is a code point that is in the range U+D800 to U+DFFF, inclusive.
  */
-export const Surrogate = /[0xD800-0xDFFF]/
+export const Surrogate = /[\uD800-\uDFFF]/
+/**
+ * A scalar value is a code point that is not a surrogate.
+ */
+export const ScalarValue = /[\uD800-\uDFFF]/
+
 /**
  * A noncharacter is a code point that is in the range U+FDD0 to U+FDEF,
  * inclusive, or U+FFFE, U+FFFF, U+1FFFE, U+1FFFF, U+2FFFE, U+2FFFF, U+3FFFE, 
