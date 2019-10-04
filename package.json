@@ -1,5 +1,5 @@
 {
-  "name": "livedom",
+  "name": "@oozcitak/infra",
   "version": "0.0.1",
   "keywords": [
     "infra",
@@ -12,7 +12,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/oozcitak/infra.git"
+    "url": "git+https://github.com/oozcitak/infra.git"
   },
   "bugs": {
     "url": "http://github.com/oozcitak/infra/issues"
@@ -26,6 +26,7 @@
     "typescript": "*",
     "jest": "*",
     "ts-jest": "*",
+    "coveralls": "*",
     "@types/node": "*",
     "@types/jest": "*"
   },
