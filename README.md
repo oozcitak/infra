@@ -10,4 +10,4 @@ A Javascript implementation of the [Infra Living Standard](https://infra.spec.wh
 [![Code Coverage](https://img.shields.io/codecov/c/github/oozcitak/infra?style=flat-square)](https://codecov.io/gh/oozcitak/infra)
 
 # version
-Current version implements the infra standard as of commit d4a3e9003e6695e3e1379a8581d945759566bfac dated 23 September 2019.
+Current version implements the standard as of commit [d4a3e90](https://github.com/whatwg/infra/commit/d4a3e9003e6695e3e1379a8581d945759566bfac).
