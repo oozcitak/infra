@@ -9,5 +9,5 @@ A Javascript implementation of the [Infra Living Standard](https://infra.spec.wh
 [![Dev Dependency Status](http://img.shields.io/david/dev/oozcitak/infra.svg?style=flat-square)](https://david-dm.org/oozcitak/infra)
 [![Code Coverage](https://img.shields.io/codecov/c/github/oozcitak/infra?style=flat-square)](https://codecov.io/gh/oozcitak/infra)
 
-# version
+## version
 Current version implements the standard as of commit [d4a3e90](https://github.com/whatwg/infra/commit/d4a3e9003e6695e3e1379a8581d945759566bfac).
