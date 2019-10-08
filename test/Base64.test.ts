@@ -24,6 +24,13 @@ describe('Base64', () => {
     }
   })
 
+  test('forgivingBase64Decode() validate input', () => {
+    expect(base64.forgivingBase64Decode(" Z\tg\n=\f=\r")).toBe(base64.forgivingBase64Decode("Zg=="))
+    expect(base64.forgivingBase64Decode("Zm9v==")).toBe(base64.forgivingBase64Decode("Zm9v"))
+    expect(base64.forgivingBase64Decode("Zm9v=")).toBe(null)
+    expect(base64.forgivingBase64Decode("()")).toBe(null)
+  })
+
   test('round trip', () => {
     const testData = [
       "",
