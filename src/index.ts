@@ -1,3 +1,4 @@
+import * as byte from './Byte'
 import * as byteSequence from './ByteSequence'
 import * as codePoint from './CodePoints'
 import * as list from './List'
@@ -8,4 +9,6 @@ import * as set from './Set'
 import * as stack from './Stack'
 import * as string from './String'
 
-export { byteSequence, codePoint, list, map, namespace, queue, set, stack, string }
+export { 
+  byte, byteSequence, codePoint, list, map, namespace, queue, set, stack, string
+}
