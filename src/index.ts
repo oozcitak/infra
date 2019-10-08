@@ -1,3 +1,4 @@
+import * as base64 from './Base64'
 import * as byte from './Byte'
 import * as byteSequence from './ByteSequence'
 import * as codePoint from './CodePoints'
@@ -10,5 +11,6 @@ import * as stack from './Stack'
 import * as string from './String'
 
 export { 
-  byte, byteSequence, codePoint, list, map, namespace, queue, set, stack, string
+  base64, byte, byteSequence, codePoint, list, map, namespace, queue, set,
+  stack, string
 }
