@@ -11,6 +11,6 @@ import * as stack from './Stack'
 import * as string from './String'
 
 export { 
-  base64, byte, byteSequence, codePoint, list, map, namespace, queue, set,
-  stack, string
+	base64, byte, byteSequence, codePoint, list, map, namespace, queue, set,
+	stack, string
 }

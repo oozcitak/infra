@@ -16,4 +16,3 @@ export function push<T>(list: Array<T>, item: T): void {
 export function pop<T>(list: Array<T>): T | null {
   return list.pop() || null
 }
-
