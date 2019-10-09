@@ -1,7 +1,7 @@
 # infra
 A Javascript implementation of the [Infra Living Standard](https://infra.spec.whatwg.org/).
 
-[![License](http://img.shields.io/npm/l/xmlbuilder.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+[![License](http://img.shields.io/npm/l/@oozcitak/infra.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![NPM Version](http://img.shields.io/npm/v/@oozcitak/infra.svg?style=flat-square)](https://www.npmjs.com/package/@oozcitak/infra)
 
 [![Travis Build Status](http://img.shields.io/travis/oozcitak/infra.svg?style=flat-square)](http://travis-ci.org/oozcitak/infra)
