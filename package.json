@@ -18,9 +18,11 @@
     "url": "http://github.com/oozcitak/infra/issues"
   },
   "main": "./lib/index",
+  "types": "lib/index.d.ts",
   "engines": {
     "node": ">=6.0"
   },
+  "files": ["lib/**/*"],
   "dependencies": {},
   "devDependencies": {
     "typescript": "*",
