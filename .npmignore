@@ -1,7 +1,0 @@
-.travis.yml
-appveyor.yml
-tsconfig.json
-src
-test
-coverage
-tsconfig.json
