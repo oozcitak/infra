@@ -1,7 +1,7 @@
-import  { ASCIIWhiteSpace } from './CodePoints'
-import { isomorphicDecode } from './ByteSequence'
-import { isASCIIByte } from './Byte'
-import { isArray } from './util'
+import  { ASCIIWhiteSpace } from "./CodePoints"
+import { isomorphicDecode } from "./ByteSequence"
+import { isASCIIByte } from "./Byte"
+import { isArray } from "@oozcitak/util"
 
 /**
  * Determines if the string `a` is a code unit prefix of string `b`.

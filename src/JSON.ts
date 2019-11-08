@@ -1,6 +1,5 @@
-import { 
-  isString, isNumber, isArray, isObject, utf8Decode, utf8Encode
-} from "./util"
+import { isString, isNumber, isArray, isObject } from "@oozcitak/util"
+import { utf8Decode, utf8Encode } from "./util"
 
 /**
  * Parses the given byte sequence representing a JSON string into an object.

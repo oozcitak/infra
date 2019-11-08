@@ -1,4 +1,4 @@
-import { isFunction } from './util'
+import { isFunction } from "@oozcitak/util"
 
 /**
  * Adds the given item to the end of the set.

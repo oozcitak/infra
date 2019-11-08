@@ -10,9 +10,6 @@ export function forgivingBase64Encode(input: string): string {
    * To forgiving-base64 encode given a byte sequence data, apply the base64
    * algorithm defined in section 4 of RFC 4648 to data and return the result.
    * [RFC4648]
-   * 
-   * Uses native Buffer on node.js.
-   * TODO: Add branch for browsers.
    */
   return Buffer.from(input).toString('base64')
 }
@@ -73,9 +70,6 @@ export function forgivingBase64Decode(input: string): string | null {
    * one or two bytes with values equal to those one or two numbers to output,
    * in the same order.
    * 10. Return output.
-   * 
-   * Uses native Buffer on node.js.
-   * TODO: Add branch for browsers.
    */
   return Buffer.from(input, 'base64').toString('utf8')
 }

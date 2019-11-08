@@ -1,4 +1,4 @@
-import { isFunction } from './util'
+import { isFunction } from "@oozcitak/util"
 
 /**
  * Gets the value corresponding to the given key.
