@@ -1,6 +1,8 @@
-import { json as infraJSON } from '../src'
+import { suite, test } from 'node:test'
+import { deepEqual } from 'node:assert'
+import { json as infraJSON } from '../lib'
 
-describe('JSON', () => {
+suite('JSON', () => {
 
   test('parseJSONFromBytes()', () => {
     const obj = {
@@ -18,7 +20,7 @@ describe('JSON', () => {
     }
     const str = JSON.stringify(obj)
     const bytes = Uint8Array.from(str.split("").map(c => c.charCodeAt(0)))
-    expect(infraJSON.parseJSONFromBytes(bytes)).toEqual(obj)
+    deepEqual(infraJSON.parseJSONFromBytes(bytes), obj)
   })
 
   test('serializeJSONToBytes()', () => {
@@ -37,7 +39,7 @@ describe('JSON', () => {
     }
     const str = JSON.stringify(obj)
     const bytes = Uint8Array.from(str.split("").map(c => c.charCodeAt(0)))
-    expect(infraJSON.serializeJSONToBytes(obj)).toEqual(bytes)
+    deepEqual(infraJSON.serializeJSONToBytes(obj), bytes)
   })
 
   test('parseJSONIntoInfraValues()', () => {
@@ -68,8 +70,8 @@ describe('JSON', () => {
     const v55 = new Map<string, any>()
     v5.set("v55", v55)
     v55.set("nested", true)
-    
-    expect(infraJSON.parseJSONIntoInfraValues(JSON.stringify(obj))).toEqual(infraObj)
+
+    deepEqual(infraJSON.parseJSONIntoInfraValues(JSON.stringify(obj)), infraObj)
   })
 
   test('convertAJSONDerivedJavaScriptValueToAnInfraValue()', () => {
@@ -100,8 +102,8 @@ describe('JSON', () => {
     const v55 = new Map<string, any>()
     v5.set("v55", v55)
     v55.set("nested", true)
-    
-    expect(infraJSON.convertAJSONDerivedJavaScriptValueToAnInfraValue(obj)).toEqual(infraObj)
+
+    deepEqual(infraJSON.convertAJSONDerivedJavaScriptValueToAnInfraValue(obj), infraObj)
   })
 
 })
