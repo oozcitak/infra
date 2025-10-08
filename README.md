@@ -6,7 +6,6 @@ A Javascript implementation of the [Infra Living Standard](https://infra.spec.wh
 
 [![Node.js CI](https://github.com/oozcitak/infra/workflows/build/badge.svg)](https://github.com/oozcitak/infra/actions)
 [![Code Coverage](https://codecov.io/gh/oozcitak/infra/branch/master/graph/badge.svg)](https://codecov.io/gh/infra/xmlbuilder2)
-[![Dev Dependency Status](https://badgen.net/david/dep/oozcitak/infra)](https://david-dm.org/oozcitak/infra)
 
 # version
 Current version implements the standard as of commit [d4a3e90](https://infra.spec.whatwg.org/commit-snapshots/d4a3e9003e6695e3e1379a8581d945759566bfac/).
