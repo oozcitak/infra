@@ -1,21 +1,23 @@
-import { queue as infraQueue } from '../src'
+import { suite, test } from 'node:test'
+import { deepEqual } from 'node:assert'
+import { queue as infraQueue } from '../lib'
 
-describe('Queue', () => {
+suite('Queue', () => {
 
   test('enqueue()', () => {
     const list = ['a', 'b', 'c']
     infraQueue.enqueue(list, 'd')
-    expect(list).toEqual(['a', 'b', 'c', 'd'])
+    deepEqual(list, ['a', 'b', 'c', 'd'])
   })
 
   test('dequeue()', () => {
     const list = ['a', 'b', 'c']
     const item = infraQueue.dequeue(list)
-    expect(item).toBe('a')
-    expect(list).toEqual(['b', 'c'])
+    deepEqual(item, 'a')
+    deepEqual(list, ['b', 'c'])
     infraQueue.dequeue(list) // remove b
     infraQueue.dequeue(list) // remove c
-    expect(infraQueue.dequeue(list)).toBeNull()
+    deepEqual(infraQueue.dequeue(list), null)
   })
 
 })

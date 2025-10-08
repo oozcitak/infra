@@ -1,14 +1,16 @@
-import { byte } from '../src'
+import { suite, test } from 'node:test'
+import { deepEqual } from 'node:assert'
+import { byte } from '../lib'
 
-describe('Byte', () => {
+suite('Byte', () => {
 
   test('isASCIIByte()', () => {
-    expect(byte.isASCIIByte(0)).toBe(true)
-    expect(byte.isASCIIByte('A'.charCodeAt(0))).toBe(true)
-    expect(byte.isASCIIByte('Z'.charCodeAt(0))).toBe(true)
-    expect(byte.isASCIIByte(127)).toBe(true)
-    expect(byte.isASCIIByte(128)).toBe(false)
-    expect(byte.isASCIIByte(255)).toBe(false)
+    deepEqual(byte.isASCIIByte(0), true)
+    deepEqual(byte.isASCIIByte('A'.charCodeAt(0)), true)
+    deepEqual(byte.isASCIIByte('Z'.charCodeAt(0)), true)
+    deepEqual(byte.isASCIIByte(127), true)
+    deepEqual(byte.isASCIIByte(128), false)
+    deepEqual(byte.isASCIIByte(255), false)
   })
 
 })

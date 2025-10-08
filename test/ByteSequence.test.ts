@@ -1,16 +1,19 @@
-import { byteSequence } from '../src'
+import { suite, test } from 'node:test'
+import { deepEqual } from 'node:assert'
+import { byteSequence } from '../lib'
 
-describe('ByteSequence', () => {
+suite('ByteSequence', () => {
 
   test('length()', () => {
     const list = new Uint8Array([1, 2, 3])
-    expect(byteSequence.length(list)).toBe(3)
+    deepEqual(byteSequence.length(list), 3)
   })
 
   test('byteLowercase()', () => {
     const list = new Uint8Array([1, 2, 'A'.charCodeAt(0), 'B'.charCodeAt(0), 3, 4])
     byteSequence.byteLowercase(list)
-    expect(list).toEqual(
+    deepEqual(
+      list,
       new Uint8Array([1, 2, 'a'.charCodeAt(0), 'b'.charCodeAt(0), 3, 4])
     )
   })
@@ -18,62 +21,63 @@ describe('ByteSequence', () => {
   test('byteUppercase()', () => {
     const list = new Uint8Array([1, 2, 'a'.charCodeAt(0), 'b'.charCodeAt(0), 3, 4])
     byteSequence.byteUppercase(list)
-    expect(list).toEqual(
+    deepEqual(
+      list,
       new Uint8Array([1, 2, 'A'.charCodeAt(0), 'B'.charCodeAt(0), 3, 4])
     )
   })
 
   test('byteCaseInsensitiveMatch()', () => {
-    expect(byteSequence.byteCaseInsensitiveMatch(
+    deepEqual(byteSequence.byteCaseInsensitiveMatch(
       new Uint8Array([1, 2, 'a'.charCodeAt(0), 'B'.charCodeAt(0), 3, 4]),
       new Uint8Array([1, 2, 'A'.charCodeAt(0), 'b'.charCodeAt(0), 3, 4])
-    )).toBe(true)
-    expect(byteSequence.byteCaseInsensitiveMatch(
+    ), true)
+    deepEqual(byteSequence.byteCaseInsensitiveMatch(
       new Uint8Array([1, 2, 'a'.charCodeAt(0), 'b'.charCodeAt(0), 3, 4]),
       new Uint8Array([1, 2, 'A'.charCodeAt(0), 'Z'.charCodeAt(0), 3, 4])
-    )).toBe(false)
-    expect(byteSequence.byteCaseInsensitiveMatch(
+    ), false)
+    deepEqual(byteSequence.byteCaseInsensitiveMatch(
       new Uint8Array([1, 2, 3, 4]),
         new Uint8Array([1, 2])
-    )).toBe(false)
+    ), false)
   })
 
   test('startsWith()', () => {
-    expect(byteSequence.startsWith(
+    deepEqual(byteSequence.startsWith(
       new Uint8Array([1, 2, 3, 4]),
         new Uint8Array([1, 2])
-    )).toBe(true)
-    expect(byteSequence.startsWith(
+    ), true)
+    deepEqual(byteSequence.startsWith(
       new Uint8Array([1, 2]),
       new Uint8Array([1, 2, 3, 4])
-    )).toBe(false)
-    expect(byteSequence.startsWith(
+    ), false)
+    deepEqual(byteSequence.startsWith(
       new Uint8Array([1, 2, 3, 4]),
         new Uint8Array([5, 6])
-    )).toBe(false)
+    ), false)
   })
 
   test('byteLessThan()', () => {
-    expect(byteSequence.byteLessThan(
+    deepEqual(byteSequence.byteLessThan(
       new Uint8Array([1, 2, 3, 4]),
         new Uint8Array([1, 2])
-    )).toBe(true)
-    expect(byteSequence.byteLessThan(
+    ), true)
+    deepEqual(byteSequence.byteLessThan(
       new Uint8Array([1, 2]),
         new Uint8Array([1, 2, 3, 4])
-    )).toBe(false)
-    expect(byteSequence.byteLessThan(
+    ), false)
+    deepEqual(byteSequence.byteLessThan(
       new Uint8Array([1, 2, 3, 4]),
         new Uint8Array([1, 2, 7, 4])
-    )).toBe(true)
-    expect(byteSequence.byteLessThan(
+    ), true)
+    deepEqual(byteSequence.byteLessThan(
       new Uint8Array([1, 2, 7, 4]),
         new Uint8Array([1, 2, 3, 4])
-    )).toBe(false)
+    ), false)
   })
 
   test('isomorphicDecode()', () => {
-    expect(byteSequence.isomorphicDecode(new Uint8Array([65, 66, 67, 68]))).toBe("ABCD")
+    deepEqual(byteSequence.isomorphicDecode(new Uint8Array([65, 66, 67, 68])), "ABCD")
   })
 
 })

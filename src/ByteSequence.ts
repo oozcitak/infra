@@ -1,9 +1,9 @@
 /**
  * Returns the count of bytes in a sequence.
- * 
+ *
  * @param list - a byte sequence
  */
-export function length(list: Uint8Array): number {
+export function length(list: Uint8Array) {
   /**
    * A byte sequence’s length is the number of bytes it contains.
    */
@@ -12,10 +12,10 @@ export function length(list: Uint8Array): number {
 
 /**
  * Converts each byte to lowercase.
- * 
+ *
  * @param list - a byte sequence
  */
-export function byteLowercase(list: Uint8Array): void {
+export function byteLowercase(list: Uint8Array) {
   /**
    * To byte-lowercase a byte sequence, increase each byte it contains, in the
    * range 0x41 (A) to 0x5A (Z), inclusive, by 0x20.
@@ -30,12 +30,12 @@ export function byteLowercase(list: Uint8Array): void {
 
 /**
  * Converts each byte to uppercase.
- * 
+ *
  * @param list - a byte sequence
  */
 export function byteUppercase(list: Uint8Array): void {
   /**
-   * To byte-uppercase a byte sequence, subtract each byte it contains, in the 
+   * To byte-uppercase a byte sequence, subtract each byte it contains, in the
    * range 0x61 (a) to 0x7A (z), inclusive, by 0x20.
    */
   for (let i = 0; i < list.length; i++) {
@@ -48,14 +48,14 @@ export function byteUppercase(list: Uint8Array): void {
 
 /**
  * Compares two byte sequences.
- * 
+ *
  * @param listA - a byte sequence
  * @param listB - a byte sequence
  */
-export function byteCaseInsensitiveMatch(listA: Uint8Array, 
-  listB: Uint8Array): boolean {
+export function byteCaseInsensitiveMatch(listA: Uint8Array,
+  listB: Uint8Array) {
   /**
-   * A byte sequence A is a byte-case-insensitive match for a byte sequence B, 
+   * A byte sequence A is a byte-case-insensitive match for a byte sequence B,
    * if the byte-lowercase of A is the byte-lowercase of B.
    */
   if (listA.length !== listB.length) return false
@@ -71,11 +71,11 @@ export function byteCaseInsensitiveMatch(listA: Uint8Array,
 
 /**
  * Determines if `listA` starts with `listB`.
- * 
+ *
  * @param listA - a byte sequence
  * @param listB - a byte sequence
  */
-export function startsWith(listA: Uint8Array, listB: Uint8Array): boolean {
+export function startsWith(listA: Uint8Array, listB: Uint8Array) {
   /**
    * 1. Let i be 0.
    * 2. While true:
@@ -96,11 +96,11 @@ export function startsWith(listA: Uint8Array, listB: Uint8Array): boolean {
 
 /**
  * Determines if `listA` is less than `listB`.
- * 
+ *
  * @param listA - a byte sequence
  * @param listB - a byte sequence
  */
-export function byteLessThan(listA: Uint8Array, listB: Uint8Array): boolean {
+export function byteLessThan(listA: Uint8Array, listB: Uint8Array) {
   /**
    * 1. If b starts with a, then return false.
    * 2. If a starts with b, then return true.
@@ -126,10 +126,10 @@ export function byteLessThan(listA: Uint8Array, listB: Uint8Array): boolean {
 
 /**
  * Decodes a byte sequence into a string.
- * 
+ *
  * @param list - a byte sequence
  */
-export function isomorphicDecode(list: Uint8Array): string {
+export function isomorphicDecode(list: Uint8Array) {
   /**
    * To isomorphic decode a byte sequence input, return a string whose length is
    * equal to input’s length and whose code points have the same values as

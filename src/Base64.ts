@@ -2,10 +2,10 @@ import { ASCIIWhiteSpace } from './CodePoints'
 
 /**
  * Base-64 encodes the given string.
- * 
+ *
  * @param input - a string
  */
-export function forgivingBase64Encode(input: string): string {
+export function forgivingBase64Encode(input: string) {
   /**
    * To forgiving-base64 encode given a byte sequence data, apply the base64
    * algorithm defined in section 4 of RFC 4648 to data and return the result.
@@ -16,10 +16,10 @@ export function forgivingBase64Encode(input: string): string {
 
 /**
  * Decodes a base-64 string.
- * 
+ *
  * @param input - a string
  */
-export function forgivingBase64Decode(input: string): string | null {
+export function forgivingBase64Decode(input: string) {
   if (input === "") return ""
   /**
    * 1. Remove all ASCII whitespace from data.
@@ -54,13 +54,13 @@ export function forgivingBase64Decode(input: string): string | null {
    * 7. Let position be a position variable for data, initially pointing at the
    * start of data.
    * 8. While position does not point past the end of data:
-   * 8.1. Find the code point pointed to by position in the second column of 
+   * 8.1. Find the code point pointed to by position in the second column of
    * Table 1: The Base 64 Alphabet of RFC 4648. Let n be the number given in the
    * first cell of the same row. [RFC4648]
-   * 8.2. Append the six bits corresponding to n, most significant bit first, 
+   * 8.2. Append the six bits corresponding to n, most significant bit first,
    * to buffer.
-   * 8.3. If buffer has accumulated 24 bits, interpret them as three 8-bit 
-   * big-endian numbers. Append three bytes with values equal to those numbers 
+   * 8.3. If buffer has accumulated 24 bits, interpret them as three 8-bit
+   * big-endian numbers. Append three bytes with values equal to those numbers
    * to output, in the same order, and then empty buffer.
    * 8.4. Advance position by 1.
    * 9. If buffer is not empty, it contains either 12 or 18 bits. If it contains
