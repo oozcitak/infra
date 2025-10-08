@@ -5,11 +5,11 @@ import { isArray } from "@oozcitak/util"
 
 /**
  * Determines if the string `a` is a code unit prefix of string `b`.
- * 
+ *
  * @param a - a string
  * @param b - a string
  */
-export function isCodeUnitPrefix(a: string, b: string): boolean {
+export function isCodeUnitPrefix(a: string, b: string) {
   /**
    * 1. Let i be 0.
    * 2. While true:
@@ -33,18 +33,18 @@ export function isCodeUnitPrefix(a: string, b: string): boolean {
 
 /**
  * Determines if the string `a` is a code unit less than string `b`.
- * 
+ *
  * @param a - a string
  * @param b - a string
  */
-export function isCodeUnitLessThan(a: string, b: string): boolean {
+export function isCodeUnitLessThan(a: string, b: string) {
   /**
    * 1. If b is a code unit prefix of a, then return false.
    * 2. If a is a code unit prefix of b, then return true.
-   * 3. Let n be the smallest index such that the nth code unit of a is 
-   * different from the nth code unit of b. (There has to be such an index, 
+   * 3. Let n be the smallest index such that the nth code unit of a is
+   * different from the nth code unit of b. (There has to be such an index,
    * since neither string is a prefix of the other.)
-   * 4. If the nth code unit of a is less than the nth code unit of b, then 
+   * 4. If the nth code unit of a is less than the nth code unit of b, then
    * return true.
    * 5. Return false.
    */
@@ -62,10 +62,10 @@ export function isCodeUnitLessThan(a: string, b: string): boolean {
 
 /**
  * Isomorphic encodes the given string.
- * 
+ *
  * @param str - a string
  */
-export function isomorphicEncode(str: string): Uint8Array {
+export function isomorphicEncode(str: string) {
   /**
    * 1. Assert: input contains no code points greater than U+00FF.
    * 2. Return a byte sequence whose length is equal to input’s length and whose
@@ -86,10 +86,10 @@ export function isomorphicEncode(str: string): Uint8Array {
 
 /**
  * Determines if the given string is An ASCII string.
- * 
+ *
  * @param str - a string
  */
-export function isASCIIString(str: string): boolean {
+export function isASCIIString(str: string) {
   /**
    * An ASCII string is a string whose code points are all ASCII code points.
    */
@@ -98,12 +98,12 @@ export function isASCIIString(str: string): boolean {
 
 /**
  * Converts all uppercase ASCII code points to lowercase.
- * 
+ *
  * @param str - a string
  */
-export function asciiLowercase(str: string): string {
+export function asciiLowercase(str: string) {
   /**
-   * To ASCII lowercase a string, replace all ASCII upper alphas in the string 
+   * To ASCII lowercase a string, replace all ASCII upper alphas in the string
    * with their corresponding code point in ASCII lower alpha.
    */
   let result = ""
@@ -120,12 +120,12 @@ export function asciiLowercase(str: string): string {
 
 /**
  * Converts all uppercase ASCII code points to uppercase.
- * 
+ *
  * @param str - a string
  */
-export function asciiUppercase(str: string): string {
+export function asciiUppercase(str: string) {
   /**
-   * To ASCII uppercase a string, replace all ASCII lower alphas in the string 
+   * To ASCII uppercase a string, replace all ASCII lower alphas in the string
    * with their corresponding code point in ASCII upper alpha.
    */
   let result = ""
@@ -142,11 +142,11 @@ export function asciiUppercase(str: string): string {
 
 /**
  * Compares two ASCII strings case-insensitively.
- * 
+ *
  * @param a - a string
  * @param b - a string
  */
-export function asciiCaseInsensitiveMatch(a: string, b: string): boolean {
+export function asciiCaseInsensitiveMatch(a: string, b: string) {
   /**
    * A string A is an ASCII case-insensitive match for a string B, if the ASCII
    * lowercase of A is the ASCII lowercase of B.
@@ -156,10 +156,10 @@ export function asciiCaseInsensitiveMatch(a: string, b: string): boolean {
 
 /**
  * ASCII encodes a string.
- * 
+ *
  * @param str - a string
  */
-export function asciiEncode(str: string): Uint8Array {
+export function asciiEncode(str: string) {
   /**
    * 1. Assert: input is an ASCII string.
    * 2. Return the isomorphic encoding of input.
@@ -171,10 +171,10 @@ export function asciiEncode(str: string): Uint8Array {
 
 /**
  * ASCII decodes a byte sequence.
- * 
+ *
  * @param bytes - a byte sequence
  */
-export function asciiDecode(bytes: Uint8Array): string {
+export function asciiDecode(bytes: Uint8Array) {
   /**
    * 1. Assert: All bytes in input are ASCII bytes.
    * 2. Return the isomorphic decoding of input.
@@ -188,10 +188,10 @@ export function asciiDecode(bytes: Uint8Array): string {
 
 /**
  * Strips newline characters from a string.
- * 
+ *
  * @param str - a string
  */
-export function stripNewlines(str: string): string {
+export function stripNewlines(str: string) {
   /**
    * To strip newlines from a string, remove any U+000A LF and U+000D CR code
    * points from the string.
@@ -200,13 +200,13 @@ export function stripNewlines(str: string): string {
 }
 
 /**
- * Normalizes newline characters in a string by converting consecutive 
+ * Normalizes newline characters in a string by converting consecutive
  * carriage-return newline characters and also single carriage return characters
  * into a single newline.
- * 
+ *
  * @param str - a string
  */
-export function normalizeNewlines(str: string): string {
+export function normalizeNewlines(str: string) {
   /**
    * To normalize newlines in a string, replace every U+000D CR U+000A LF code
    * point pair with a single U+000A LF code point, and then replace every
@@ -217,10 +217,10 @@ export function normalizeNewlines(str: string): string {
 
 /**
  * Removes leading and trailing whitespace characters from a string.
- * 
+ *
  * @param str - a string
  */
-export function stripLeadingAndTrailingASCIIWhitespace(str: string): string {
+export function stripLeadingAndTrailingASCIIWhitespace(str: string) {
   /**
    * To strip leading and trailing ASCII whitespace from a string, remove all
    * ASCII whitespace that are at the start or the end of the string.
@@ -230,10 +230,10 @@ export function stripLeadingAndTrailingASCIIWhitespace(str: string): string {
 
 /**
  * Removes consecutive newline characters from a string.
- * 
+ *
  * @param str - a string
  */
-export function stripAndCollapseASCIIWhitespace(str: string): string {
+export function stripAndCollapseASCIIWhitespace(str: string) {
   /**
    * To strip and collapse ASCII whitespace in a string, replace any sequence of
    * one or more consecutive code points that are ASCII whitespace in the string
@@ -246,13 +246,13 @@ export function stripAndCollapseASCIIWhitespace(str: string): string {
 /**
  * Collects a sequence of code points matching a given condition from the input
  * string.
- * 
+ *
  * @param condition - a condition to match
  * @param input - a string
  * @param options - starting position
  */
 export function collectASequenceOfCodePoints(condition: ((str: string) => boolean),
-  input: string | string[], options: { position: number }): string {
+  input: string | string[], options: { position: number }) {
   /**
    * 1. Let result be the empty string.
    * 2. While position doesn’t point past the end of input and the code point at
@@ -273,11 +273,11 @@ export function collectASequenceOfCodePoints(condition: ((str: string) => boolea
 
 /**
  * Skips over ASCII whitespace.
- * 
+ *
  * @param input - input string
  * @param options - starting position
  */
-export function skipASCIIWhitespace(input: string | string[], options: { position: number }): void {
+export function skipASCIIWhitespace(input: string | string[], options: { position: number }) {
   /**
    * To skip ASCII whitespace within a string input given a position variable
    * position, collect a sequence of code points that are ASCII whitespace from
@@ -289,11 +289,11 @@ export function skipASCIIWhitespace(input: string | string[], options: { positio
 
 /**
  * Solits a string at the given delimiter.
- * 
+ *
  * @param input - input string
  * @param delimiter - a delimiter string
  */
-export function strictlySplit(input: string | string[], delimiter: string): string[] {
+export function strictlySplit(input: string | string[], delimiter: string) {
   /**
    * 1. Let position be a position variable for input, initially pointing at the
    * start of input.
@@ -326,10 +326,10 @@ export function strictlySplit(input: string | string[], delimiter: string): stri
 
 /**
  * Splits a string on ASCII whitespace.
- * 
+ *
  * @param input - a string
  */
-export function splitAStringOnASCIIWhitespace(input: string | string[]): string[] {
+export function splitAStringOnASCIIWhitespace(input: string | string[]) {
   /**
    * 1. Let position be a position variable for input, initially pointing at the
    * start of input.
@@ -357,10 +357,10 @@ export function splitAStringOnASCIIWhitespace(input: string | string[]): string[
 
 /**
  * Splits a string on commas.
- * 
+ *
  * @param input - a string
  */
-export function splitAStringOnCommas(input: string | string[]): string[] {
+export function splitAStringOnCommas(input: string | string[]) {
   /**
    * 1. Let position be a position variable for input, initially pointing at the
    * start of input.
@@ -392,15 +392,15 @@ export function splitAStringOnCommas(input: string | string[]): string[] {
 
 /**
  * Concatenates a list of strings with the given separator.
- * 
+ *
  * @param list - a list of strings
  * @param separator - a separator string
  */
-export function concatenate(list: string[], separator: string = ""): string {
+export function concatenate(list: string[], separator: string = "") {
   /**
    * 1. If list is empty, then return the empty string.
    * 2. If separator is not given, then set separator to the empty string.
-   * 3. Return a string whose contents are list’s items, in order, separated 
+   * 3. Return a string whose contents are list’s items, in order, separated
    * from each other by separator.
    */
   if (list.length === 0) return ""
